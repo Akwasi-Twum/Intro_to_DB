@@ -12,3 +12,4 @@ SHOW TABLES;mysql -u your_username -p your_database_name < task_3.sql
 SHOW TABLES;
 
 SHOW TABLES;
+USE alx_book_store;
