@@ -53,3 +53,47 @@ finally:
         cursor.close()
     if 'connection' in locals() and connection.is_connected():
         connection.close()
+# File: MySQLServer.py
+
+import mysql.connector
+from mysql.connector import Error
+
+def create_database():
+    connection = None
+    cursor = None
+
+    try:
+        # Connect to MySQL Server (update with your credentials)
+        connection = mysql.connector.connect(
+            host='localhost',
+            user='your_username',
+            password='your_password'
+        )
+
+        if connection.is_connected():
+            cursor = connection.cursor()
+            cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store;")
+            print("Database 'alx_book_store' created successfully!")
+
+    except Error as err:
+        print(f"Error: {err}")
+
+    except Exception as ex:
+        print(f"Unexpected error: {ex}")
+
+    finally:
+        if cursor:
+            try:
+                cursor.close()
+            except Error as cursor_err:
+                print(f"Error closing cursor: {cursor_err}")
+
+        if connection and connection.is_connected():
+            try:
+                connection.close()
+                print("MySQL connection closed.")
+            except Error as conn_err:
+                print(f"Error closing connection: {conn_err}")
+
+if __name__ == "__main__":
+    create_database()
