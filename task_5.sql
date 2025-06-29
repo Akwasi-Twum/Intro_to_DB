@@ -19,3 +19,13 @@ VALUES (1, 'Cole Baidoo', 'cbaidoo@sandtech.com', '123 Happiness Ave.');
 INSERT INTO CUSTOMER (CUSTOMER_ID, CUSTOMER_NAME, EMAIL, ADDRESS)
 VALUES (1, 'Cole Baidoo', 'cbaidoo@sandtech.com', '123 Happiness Ave.');
 mysql -u your_username -p your_database_name < task_5.sql
+
+
+
+
+
+-- task_5.sql
+-- Insert a single row into the customer table in alx_book_store database
+
+INSERT INTO customer (customer_id, customer_name, email, address)
+VALUES (1, 'Cole Baidoo', 'cbaidoo@sandtech.com', '123 Happiness Ave.');
